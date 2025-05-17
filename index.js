@@ -69,13 +69,11 @@ app.get('/genarat-json', async (req, res) => {
         res.send({ massage: 'Please Provide a prompt with query' })
         return
     }
-    const finalprompt = `genarate some data from this prompt   using this JSON schema:
+    const finalprompt = `genarate some data from this prompt ${prompt}  using this JSON schema:
 
-    Recipe = {'recipeName': string}
+    data = {'datatype': output}
     Return: Array<Recipe>`;
-
-
-
+ 
     const result = await model.generateContent(finalprompt)
     const output = result.response.text().slice(7, -4)
     const jsonData = JSON.parse(output)
