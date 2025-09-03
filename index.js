@@ -62,7 +62,7 @@ app.get('/test-ai', async (req, res) => {
 })
 
 // this is for json Data
-app.get('/genarat-json', async (req, res) => {
+app.get('/json-text', async (req, res) => {
     const prompt = req.query?.prompt;
 
     if (!prompt) {
@@ -81,7 +81,7 @@ app.get('/genarat-json', async (req, res) => {
 })
 
 // this is for img
-app.get('/gen', async (req, res) => {
+app.get('/img-text', async (req, res) => {
     const prompt = req.query?.prompt;
     if (!prompt) {
         res.send({ massage: 'Please Provide a prompt with query' })
